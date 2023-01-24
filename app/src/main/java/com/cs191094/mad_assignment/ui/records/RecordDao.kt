@@ -1,4 +1,4 @@
-package com.cs191014.assignment1.ui.records
+package com.cs191094.mad_assignment.ui.records
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

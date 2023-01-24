@@ -1,4 +1,4 @@
-package com.cs191014.assignment1.ui.records
+package com.cs191094.mad_assignment.ui.records
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

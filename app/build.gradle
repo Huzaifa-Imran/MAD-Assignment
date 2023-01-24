@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.cs191014.assignment1'
+    namespace 'com.cs191094.mad_assignment'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.cs191014.assignment1"
+        applicationId "com.cs191094.mad_assignment"
         minSdk 21
         targetSdk 32
         versionCode 1

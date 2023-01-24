@@ -1,4 +1,4 @@
-package com.cs191014.assignment1.ui.records
+package com.cs191094.mad_assignment.ui.records
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,13 +11,12 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.cs191014.assignment1.R
+import com.cs191094.mad_assignment.R
 
 
 class RecordAdapter(
     var mRecords: ArrayList<Record>,
     val itemClickHandler: (Int) -> Unit,
-    val deleteHandler: (Int) -> Unit,
     val updateHandler: (Int) -> Unit,
     private val context: Context
 ) : RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
@@ -32,7 +31,6 @@ class RecordAdapter(
         val titleTextView = itemView.findViewById<TextView>(R.id.record_name)!!
         val subtitleTextView = itemView.findViewById<TextView>(R.id.record_description)!!
         val favButton = itemView.findViewById<ImageButton>(R.id.favButton)!!
-        val deleteButton = itemView.findViewById<ImageButton>(R.id.deleteButton)!!
     }
 
     // ... constructor and member variables
@@ -54,13 +52,6 @@ class RecordAdapter(
                 updateHandler(viewHolder.adapterPosition)
             }
             notifyItemChanged(viewHolder.adapterPosition)
-        }
-        val deleteButton = viewHolder.deleteButton
-        deleteButton.setOnClickListener {
-            if (viewHolder.adapterPosition >= 0 && viewHolder.adapterPosition < mRecords.size) {
-                deleteHandler(viewHolder.adapterPosition)
-            }
-            notifyItemRemoved(viewHolder.adapterPosition)
         }
 
         // Return a new holder instance

@@ -1,11 +1,9 @@
-package com.cs191014.assignment1.ui.records
+package com.cs191094.mad_assignment.ui.records
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
-import java.util.logging.LogRecord
-import java.util.logging.Logger
 
 
 class RecordsModel : ViewModel() {

@@ -1,4 +1,4 @@
-package com.cs191014.assignment1
+package com.cs191094.mad_assignment
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.cs191014.assignment1.databinding.ActivityMainBinding
-import com.cs191014.assignment1.ui.records.Record
+import com.cs191094.mad_assignment.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -28,7 +27,11 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_favorites
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_favorites,
+                R.id.navigation_search,
+                R.id.navigation_notifications
             )
         )
 //        navController.graph.addArgument("records", NavArgument.Builder().setDefaultValue(records).build())

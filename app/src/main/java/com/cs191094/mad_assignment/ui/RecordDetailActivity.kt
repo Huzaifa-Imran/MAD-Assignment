@@ -1,13 +1,13 @@
-package com.cs191014.assignment1.ui
+package com.cs191094.mad_assignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.cs191014.assignment1.R
-import com.cs191014.assignment1.databinding.ActivityRecordDetailsBinding
-import com.cs191014.assignment1.ui.records.Record
+import com.cs191094.mad_assignment.R
+import com.cs191094.mad_assignment.databinding.ActivityRecordDetailsBinding
+import com.cs191094.mad_assignment.ui.records.Record
 
 class RecordDetailActivity : AppCompatActivity() {
 

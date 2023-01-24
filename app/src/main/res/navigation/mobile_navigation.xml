@@ -7,19 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.cs191014.assignment1.ui.home.HomeFragment"
+        android:name="com.cs191094.mad_assignment.ui.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.cs191014.assignment1.ui.add_record.AddRecordFragment"
+        android:name="com.cs191094.mad_assignment.ui.AddRecordFragment"
         android:label="@string/title_add_record"
         tools:layout="@layout/fragment_add_record" />
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.cs191014.assignment1.ui.favorites.FavoritesFragment"
+        android:name="com.cs191094.mad_assignment.ui.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.cs191094.mad_assignment.ui.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.cs191094.mad_assignment.ui.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

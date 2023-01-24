@@ -1,4 +1,4 @@
-package com.cs191014.assignment1.ui
+package com.cs191094.mad_assignment.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
-import com.cs191014.assignment1.MainActivity
-import com.cs191014.assignment1.R
+import com.cs191094.mad_assignment.MainActivity
+import com.cs191094.mad_assignment.R
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {

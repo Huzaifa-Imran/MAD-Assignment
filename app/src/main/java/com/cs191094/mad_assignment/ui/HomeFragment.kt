@@ -1,4 +1,4 @@
-package com.cs191014.assignment1.ui.favorites
+package com.cs191094.mad_assignment.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,14 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cs191014.assignment1.R
-import com.cs191014.assignment1.ui.RecordDetailActivity
-import com.cs191014.assignment1.ui.records.RecordAdapter
-import com.cs191014.assignment1.ui.records.RecordsModel
+import com.cs191094.mad_assignment.R
+import com.cs191094.mad_assignment.ui.records.RecordAdapter
+import com.cs191094.mad_assignment.ui.records.RecordsModel
 import kotlinx.coroutines.launch
 import java.io.Serializable
 
-class FavoritesFragment : Fragment() {
+
+class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,20 +25,20 @@ class FavoritesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Lookup the recyclerview in activity layout
-        val view: View = inflater.inflate(R.layout.fragment_favorites, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
         val rvRecords = view.findViewById(R.id.rvRecords) as RecyclerView
         // Initialize records
         val recordsModel: RecordsModel =
             ViewModelProvider(requireActivity())[RecordsModel::class.java]
+//      Create adapter passing in the sample user data
         lifecycleScope.launch {
             if (recordsModel.records.value == null) {
                 recordsModel.loadRecords(context!!)
             }
             // Create adapter passing in the sample user data
             val adapter = RecordAdapter(
-                ArrayList(recordsModel.records.value!!.filter { record -> record.isFav }),
+                recordsModel.records.value!!,
                 ::onRecordClickHandler,
-                ::onRecordDeleted,
                 ::onRecordUpdated,
                 context!!
             )
@@ -47,7 +47,6 @@ class FavoritesFragment : Fragment() {
             // Set layout manager to position the items
             rvRecords.layoutManager = LinearLayoutManager(view.context)
         }
-
         // That's all!
         return view
     }
@@ -57,23 +56,13 @@ class FavoritesFragment : Fragment() {
             val intent = Intent(it, RecordDetailActivity::class.java)
             intent.putExtra(
                 "record",
-                ViewModelProvider(requireActivity())[RecordsModel::class.java].records.value!!.filter { record -> record.isFav }[position] as Serializable
+                ViewModelProvider(requireActivity())[RecordsModel::class.java].records.value!![position] as Serializable
             )
             it.startActivityFromFragment(this, intent, 1)
         }
     }
 
-    private fun onRecordDeleted(position: Int) {
-        ViewModelProvider(requireActivity())[RecordsModel::class.java].deleteRecord(
-            position,
-            context!!
-        )
-    }
-
     private fun onRecordUpdated(position: Int) {
-        ViewModelProvider(requireActivity())[RecordsModel::class.java].markFavorite(
-            position,
-            context!!
-        )
+        ViewModelProvider(requireActivity())[RecordsModel::class.java].markFavorite(position, context!!)
     }
 }

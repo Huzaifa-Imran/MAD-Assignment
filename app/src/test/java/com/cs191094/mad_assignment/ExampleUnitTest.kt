@@ -1,4 +1,4 @@
-package com.cs191014.assignment1
+package com.cs191094.mad_assignment
 
 import org.junit.Test
 
